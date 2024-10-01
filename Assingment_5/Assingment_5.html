@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+ 
+    <title>Document</title>
+</head>
+<body>
+  <div style="position: relative;">
+    <img
+    style="height:200px;width:200px"
+    id="img"
+    src="images.jpg"/>
+  </div>
+    <div style="position:absolute;top: 200px;left: 50px;">
+      <table>
+        <tr>
+            <td> <b> X-axis </b></td>
+            <td> <b> <input type="text" id="xaxis"> </b></td>
+        </tr>
+        <tr>
+            
+                <td> <b> Y-axis </b></td>
+                <td> <b> <input type="text" id ="yaxis"> </b></td>
+            
+        </tr>        
+
+      </table>
+      <input type="button" onclick="startcar()" value="Start" />
+      <input type="button" onclick="stopcar()" value="Stop" />
+    </div>
+
+      <script>
+         horizontalcount=0;
+         verticalcount=0;
+
+// function to  move car by mouse click
+         function moveCar(){
+          horizontalcount=horizontalcount+30;
+          
+          if(horizontalcount<900)
+         {
+          document.getElementById("img").style.paddingLeft=horizontalcount+"px";
+          document.getElementById("xaxis").value=horizontalcount;
+         }
+         else{
+          if(verticalcount<900){
+          verticalcount=verticalcount+30;
+          document.getElementById("img").style.paddingTop=verticalcount+"px";
+          document.getElementById("yaxis").value=verticalcount;
+          }
+          else  stopcar();
+          
+         }
+
+         }
+         // function to stat car automatically
+         function startcar(){
+          window.setInterval(moveCar,100);
+         }
+          // function to stop car 
+          function stopcar(){
+            window.location.reload();
+          }
+         
+      </script>
+
+</body>
+</html>
