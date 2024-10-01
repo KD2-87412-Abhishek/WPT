@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <center>
+                <h1>claculator</h1>
+            <div class="calc" >
+                <table>
+                      <tr> <td> <p> Enter number one :</td><td> <input type="number"id="num1"></p></td></tr>
+                        <tr> <td> <p> Enter number two  :</td><td> <input type="number"id="num2"></p></td></tr>
+                            <tr> <td> <p> result  :</td><td><input type="number" id="result"></p></td></tr>
+                </table>
+
+            </div>
+            <div class =" button">
+                
+                <input type="button" value="Addition" onclick="addition()"  >
+                <input type="button" value="Substraction" onclick="substraction()" >
+                <input type="button" value="multiplication" onclick="multiplication()" >
+                <input type="button" value="devision" onclick="division()" >
+               
+            </div>
+    
+
+<script>
+     var A,B,C;
+     
+     function numbers(){
+         A=parseInt(document.getElementById("num1").value);
+         B=parseInt(document.getElementById("num2").value);
+     }
+     
+     
+
+    function addition(){
+        numbers();
+      C=A+B
+        document.getElementById("result").value=C;
+    }
+    function substraction(){
+        numbers();
+      C=A-B
+        document.getElementById("result").value=C;
+    }
+    function multiplication(){
+        numbers();
+      C=A*B
+        document.getElementById("result").value=C;
+    }
+    function division() {
+            numbers();
+            if (B === 0) {
+                alert("Cannot divide by zero");
+                return;
+            }
+            C = A / B;
+            document.getElementById("result").value = C;
+        }
+   
+
+    
+      
+    
+
+</script>
+    </center>
+</body>
+</html>
